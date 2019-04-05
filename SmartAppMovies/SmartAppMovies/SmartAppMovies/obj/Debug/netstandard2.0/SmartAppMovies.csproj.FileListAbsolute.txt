@@ -1,0 +1,12 @@
+D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies\bin\Debug\netstandard2.0\SmartAppMovies.deps.json
+D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies\bin\Debug\netstandard2.0\SmartAppMovies.dll
+D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies\obj\Debug\netstandard2.0\SmartAppMovies.csprojAssemblyReference.cache
+D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies\obj\Debug\netstandard2.0\App.xaml.g.cs
+D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies\obj\Debug\netstandard2.0\SmartAppMovies.csproj.CoreCompileInputs.cache
+D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies\obj\Debug\netstandard2.0\SmartAppMovies.AssemblyInfoInputs.cache
+D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies\obj\Debug\netstandard2.0\SmartAppMovies.AssemblyInfo.cs
+D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies\bin\Debug\netstandard2.0\SmartAppMovies.pdb
+D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies\obj\Debug\netstandard2.0\XamlC.stamp
+D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies\obj\Debug\netstandard2.0\SmartAppMovies.dll
+D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies\obj\Debug\netstandard2.0\SmartAppMovies.pdb

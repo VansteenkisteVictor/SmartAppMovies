@@ -1,0 +1,17 @@
+D:\SAD1\SmartAppMovies\SmartAppMovies\MoviesTest\bin\Debug\netcoreapp2.2\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\SAD1\SmartAppMovies\SmartAppMovies\MoviesTest\bin\Debug\netcoreapp2.2\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+D:\SAD1\SmartAppMovies\SmartAppMovies\MoviesTest\bin\Debug\netcoreapp2.2\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\SAD1\SmartAppMovies\SmartAppMovies\MoviesTest\bin\Debug\netcoreapp2.2\MoviesTest.deps.json
+D:\SAD1\SmartAppMovies\SmartAppMovies\MoviesTest\bin\Debug\netcoreapp2.2\MoviesTest.runtimeconfig.json
+D:\SAD1\SmartAppMovies\SmartAppMovies\MoviesTest\bin\Debug\netcoreapp2.2\MoviesTest.runtimeconfig.dev.json
+D:\SAD1\SmartAppMovies\SmartAppMovies\MoviesTest\bin\Debug\netcoreapp2.2\MoviesTest.dll
+D:\SAD1\SmartAppMovies\SmartAppMovies\MoviesTest\bin\Debug\netcoreapp2.2\MoviesTest.pdb
+D:\SAD1\SmartAppMovies\SmartAppMovies\MoviesTest\bin\Debug\netcoreapp2.2\SmartAppMovies.dll
+D:\SAD1\SmartAppMovies\SmartAppMovies\MoviesTest\bin\Debug\netcoreapp2.2\SmartAppMovies.pdb
+D:\SAD1\SmartAppMovies\SmartAppMovies\MoviesTest\obj\Debug\netcoreapp2.2\MoviesTest.csprojAssemblyReference.cache
+D:\SAD1\SmartAppMovies\SmartAppMovies\MoviesTest\obj\Debug\netcoreapp2.2\MoviesTest.csproj.CoreCompileInputs.cache
+D:\SAD1\SmartAppMovies\SmartAppMovies\MoviesTest\obj\Debug\netcoreapp2.2\MoviesTest.AssemblyInfoInputs.cache
+D:\SAD1\SmartAppMovies\SmartAppMovies\MoviesTest\obj\Debug\netcoreapp2.2\MoviesTest.AssemblyInfo.cs
+D:\SAD1\SmartAppMovies\SmartAppMovies\MoviesTest\obj\Debug\netcoreapp2.2\MoviesTest.csproj.CopyComplete
+D:\SAD1\SmartAppMovies\SmartAppMovies\MoviesTest\obj\Debug\netcoreapp2.2\MoviesTest.dll
+D:\SAD1\SmartAppMovies\SmartAppMovies\MoviesTest\obj\Debug\netcoreapp2.2\MoviesTest.pdb

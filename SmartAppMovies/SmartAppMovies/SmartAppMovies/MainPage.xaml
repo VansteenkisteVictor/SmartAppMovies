@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SmartAppMovies"
+             x:Class="SmartAppMovies.MainPage"
+             Title="Home">
+
+    <StackLayout>
+        <Entry VerticalOptions="StartAndExpand" Text="{Binding Search}" Placeholder="Movie"></Entry>
+        <ListView ItemsSource="{Binding movieSearch.Search}" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout
+                        Orientation="Vertical" MinimumHeightRequest="800">
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="{Binding Poster}"/>
+                                <Label Text="{Binding Title}"
+                                TextColor="#f35e20" />
+                                <Label Text="{Binding Year}"
+                                HorizontalOptions="EndAndExpand"
+                                TextColor="#503026" />
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                    <!--<ImageCell ImageSource="https://m.media-amazon.com/images/M/MV5BODdlMjU0MDYtMWQ1NC00YjFjLTgxMDQtNDYxNTg2ZjJjZDFiXkEyXkFqcGdeQXVyMTU2NTcxNDg@._V1_SX300.jpg" Text="{Binding Title}" Detail="{Binding Year}"></ImageCell>-->
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
