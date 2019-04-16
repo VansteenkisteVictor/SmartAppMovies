@@ -7,7 +7,7 @@
 
     <StackLayout>
         <Entry VerticalOptions="StartAndExpand" Text="{Binding Search}" Placeholder="Movie"></Entry>
-        <ListView ItemsSource="{Binding movieSearch.Search}" HasUnevenRows="True">
+        <ListView ItemsSource="{Binding movieSearch.Search}" HasUnevenRows="True" SelectedItem="{Binding SelectedMovie}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

@@ -1,6 +1,7 @@
 ﻿using GalaSoft.MvvmLight.Ioc;
 using SmartAppMovies.Services;
 using SmartAppMovies.ViewModels;
+using SmartAppMovies.Views;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -25,6 +26,7 @@ namespace SmartAppMovies
             InitializeComponent();
             var nav = new NavigationService();
             nav.Configure(ViewModelLocator.MainPage, typeof(MainPage));
+            nav.Configure(ViewModelLocator.DetailPage, typeof(DetailPage));
 
             SimpleIoc.Default.Register<ICustomNavigation>(() => nav);
 

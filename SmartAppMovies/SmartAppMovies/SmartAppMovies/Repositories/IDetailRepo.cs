@@ -1,11 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using SmartAppMovies.Models;
 
 namespace SmartAppMovies.Repositories
 {
     public interface IDetailRepo
     {
-        Task<List<MovieDetail>> GetMovieDetail(string q);
+        Task<MovieDetail> GetMovieDetail(string q);
     }
 }

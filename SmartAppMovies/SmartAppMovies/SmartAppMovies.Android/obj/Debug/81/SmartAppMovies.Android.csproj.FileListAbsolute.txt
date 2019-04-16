@@ -81,8 +81,6 @@ D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies.Android\obj\
 D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies.Android\obj\Debug\81\linksrc\Mono.Security.pdb
 D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies.Android\bin\Debug\GalaSoft.MvvmLight.Platform.dll.mdb
 D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies.Android\bin\Debug\SmartAppMovies.dll.mdb
-D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies.Android\obj\Debug\81\linksrc\GalaSoft.MvvmLight.Platform.dll.mdb
-D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies.Android\obj\Debug\81\linksrc\SmartAppMovies.dll.mdb
 D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies.Android\obj\Debug\81\android\assets\GalaSoft.MvvmLight.Platform.dll.mdb
 D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies.Android\obj\Debug\81\android\assets\SmartAppMovies.dll.mdb
 D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies.Android\obj\Debug\81\android\assets\FormsViewGroup.pdb
@@ -108,6 +106,8 @@ D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies.Android\obj\
 D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies.Android\obj\Debug\81\android\assets\Xamarin.Forms.Core.pdb
 D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies.Android\obj\Debug\81\android\assets\Xamarin.Forms.Platform.Android.pdb
 D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies.Android\obj\Debug\81\android\assets\Xamarin.Forms.Xaml.pdb
+D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies.Android\obj\Debug\81\linksrc\GalaSoft.MvvmLight.Platform.dll.mdb
+D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies.Android\obj\Debug\81\linksrc\SmartAppMovies.dll.mdb
 D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies\bin\Debug\netstandard2.0\SmartAppMovies.dll
 D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies.Android\bin\Debug\SmartAppMovies.dll.mdb
 D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies.Android\obj\Debug\81\linksrc\GalaSoft.MvvmLight.Platform.dll.mdb

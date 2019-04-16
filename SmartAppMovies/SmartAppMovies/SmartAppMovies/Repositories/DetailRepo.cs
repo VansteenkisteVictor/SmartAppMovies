@@ -9,14 +9,13 @@ namespace SmartAppMovies.Repositories
 {
     public class DetailRepo : IDetailRepo
     {
-        public async Task<List<MovieDetail>> GetMovieDetail(string q)
+        public async Task<MovieDetail> GetMovieDetail(string q)
         {
             try
             {
-                var getResponse = await "http://www.omdbapi.com/?t={q}&apikey=9db84c18".GetJsonAsync<List<MovieDetail>>();
+                var getResponse = await $"http://www.omdbapi.com/?t={q}&apikey=9db84c18".GetJsonAsync<MovieDetail>();
                 Console.WriteLine(getResponse);
                 return getResponse;
-
             }
             catch (FlurlHttpException ex)
             {

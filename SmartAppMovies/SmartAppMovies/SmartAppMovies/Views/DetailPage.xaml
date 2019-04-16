@@ -4,9 +4,19 @@
              x:Class="SmartAppMovies.Views.DetailPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <Image Source="{Binding DetailMovie.Poster}" WidthRequest="150" HeightRequest="250"></Image>
+                <StackLayout>
+                    <Label Text="{Binding DetailMovie.Title}" HorizontalOptions="StartAndExpand" FontSize="Large"></Label>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <Label Text="{Binding DetailMovie.Genre}" HorizontalOptions="StartAndExpand" FontSize="Medium"></Label>
+                        <Label Text="-" HorizontalOptions="StartAndExpand" FontSize="Medium"></Label>
+                        <Label Text="{Binding DetailMovie.Year}" HorizontalOptions="StartAndExpand" FontSize="Medium"></Label>
+                    </StackLayout>
+                </StackLayout>
+
+            </StackLayout>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

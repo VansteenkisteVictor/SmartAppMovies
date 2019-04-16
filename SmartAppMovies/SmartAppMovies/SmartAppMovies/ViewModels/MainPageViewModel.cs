@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
 using SmartAppMovies.Models;
 using SmartAppMovies.Repositories;
 using SmartAppMovies.Services;
@@ -11,9 +12,11 @@ namespace SmartAppMovies.ViewModels
     public class MainPageViewModel :ViewModelBase
     {
         private readonly IMovieService _movieService;
-        public MainPageViewModel(IMovieService movieService)
+        private ICustomNavigation _navigationService;
+        public MainPageViewModel(IMovieService movieService, ICustomNavigation navigationService)
         {
             _movieService = movieService;
+            _navigationService = navigationService;
         }
 
         public async void GetDataAsync(string search)
@@ -26,10 +29,6 @@ namespace SmartAppMovies.ViewModels
             {
                 throw ex;
             }
-            
-            
-
-            Console.WriteLine(movieSearch.Search[0].Poster);
         }
 
         private MovieSearch _moviesSearch;
@@ -88,6 +87,29 @@ namespace SmartAppMovies.ViewModels
 
                 }
 
+            }
+        }
+
+        private Search _selectedMovie;
+        public Search SelectedMovie
+        {
+            get { return _selectedMovie; }
+            set
+            {
+                if (value != null)
+                {
+                    _selectedMovie = value;
+                    RaisePropertyChanged(() => SelectedMovie);
+                    try
+                    {
+                        _navigationService.NavigateTo(ViewModelLocator.DetailPage, _selectedMovie);
+                    }
+                    catch (Exception ex)
+                    {
+
+                        throw ex;
+                    }
+                }
             }
         }
     }

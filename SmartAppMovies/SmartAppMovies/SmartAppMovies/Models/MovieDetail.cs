@@ -4,6 +4,7 @@ using System.Text;
 
 namespace SmartAppMovies.Models
 {
+
     public class MovieDetail
     {
         public string Title { get; set; }

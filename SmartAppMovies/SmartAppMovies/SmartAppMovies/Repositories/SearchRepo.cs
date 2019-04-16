@@ -16,7 +16,6 @@ namespace SmartAppMovies.Repositories
                 var getResponse = await $"http://www.omdbapi.com/?s={q}&apikey=9db84c18".GetJsonAsync<MovieSearch>();
                 Console.WriteLine(getResponse);
                 return getResponse;
-
             }
             catch (FlurlHttpException ex)
             {

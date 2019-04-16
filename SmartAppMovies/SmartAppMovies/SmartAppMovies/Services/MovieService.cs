@@ -20,7 +20,7 @@ namespace SmartAppMovies.Services
         {
             return await _searchRepo.GetMovieSearch(q);
         }
-        public async Task<List<MovieDetail>> GetMovieDetail(string q)
+        public async Task<MovieDetail> GetMovieDetail(string q)
         {
             return await _detailRepo.GetMovieDetail(q);
         }

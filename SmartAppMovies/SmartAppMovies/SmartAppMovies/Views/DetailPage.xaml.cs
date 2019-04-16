@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SmartAppMovies.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,12 @@ namespace SmartAppMovies.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DetailPage : ContentPage
     {
-        public DetailPage()
+        public DetailPage(Search movieSearch)
         {
             InitializeComponent();
+            BindingContext = App.ViewModelLocator.DetailPageViewModel;
+            App.ViewModelLocator.DetailPageViewModel.SelectedMovie = movieSearch;
+            Title = movieSearch.Title;
         }
     }
 }
