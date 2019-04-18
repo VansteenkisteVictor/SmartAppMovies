@@ -19,6 +19,25 @@ namespace SmartAppMovies.ViewModels
             _navigationService = navigationService;
         }
 
+        public RelayCommand RefreshCommand
+        {
+            get
+            {
+                return new RelayCommand(() =>
+                {
+                    try
+                    {
+                        GetDataAsync(Search);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw ex;
+                    }
+
+                });
+            }
+        }
+
         public async void GetDataAsync(string search)
         {
             try

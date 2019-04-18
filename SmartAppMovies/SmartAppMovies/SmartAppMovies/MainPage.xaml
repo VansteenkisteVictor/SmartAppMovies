@@ -5,6 +5,10 @@
              x:Class="SmartAppMovies.MainPage"
              Title="Home">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="Refresh" Command="{Binding RefreshCommand}" Order="Primary" Text="Refresh" Priority="0" />
+    </ContentPage.ToolbarItems>
+
     <StackLayout>
         <Entry VerticalOptions="StartAndExpand" Text="{Binding Search}" Placeholder="Movie"></Entry>
         <ListView ItemsSource="{Binding movieSearch.Search}" HasUnevenRows="True" SelectedItem="{Binding SelectedMovie}">

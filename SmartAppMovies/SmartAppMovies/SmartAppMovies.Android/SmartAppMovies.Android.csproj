@@ -68,6 +68,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidAsset Include="Assets\data1.json" />
+    <AndroidAsset Include="Assets\data2.json" />
+    <AndroidAsset Include="Assets\data3.json" />
+    <AndroidAsset Include="Assets\data4.json" />
+    <AndroidAsset Include="Assets\data5.json" />
+    <AndroidAsset Include="Assets\data6.json" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
@@ -95,13 +101,15 @@
     <Folder Include="Resources\drawable-xhdpi\" />
     <Folder Include="Resources\drawable-xxhdpi\" />
     <Folder Include="Resources\drawable-xxxhdpi\" />
-    <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SmartAppMovies\SmartAppMovies.csproj">
       <Project>{4844C707-56B0-40BB-AE3D-944319B523BD}</Project>
       <Name>SmartAppMovies</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\share.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
