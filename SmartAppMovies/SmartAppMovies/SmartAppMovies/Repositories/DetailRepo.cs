@@ -13,7 +13,7 @@ namespace SmartAppMovies.Repositories
         {
             try
             {
-                var getResponse = await $"http://www.omdbapi.com/?t={q}&apikey=9db84c18".GetJsonAsync<MovieDetail>();
+                var getResponse = await $"http://www.omdbapi.com/?i={q}&apikey=9db84c18".GetJsonAsync<MovieDetail>();
                 Console.WriteLine(getResponse);
                 return getResponse;
             }

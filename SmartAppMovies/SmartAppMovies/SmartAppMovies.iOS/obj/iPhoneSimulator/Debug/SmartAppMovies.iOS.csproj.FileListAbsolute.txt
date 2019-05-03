@@ -63,3 +63,9 @@ D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies.iOS\obj\iPho
 D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies.iOS\obj\iPhoneSimulator\Debug\SmartAppMovies.iOS.exe
 D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies.iOS\obj\iPhoneSimulator\Debug\SmartAppMovies.iOS.pdb
 D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies.iOS\bin\iPhoneSimulator\Debug\SmartAppMovies.dll.mdb
+D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies.iOS\bin\iPhoneSimulator\Debug\Lottie.iOS.dll
+D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies.iOS\bin\iPhoneSimulator\Debug\Lottie.iOS.pdb
+D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies.iOS\bin\iPhoneSimulator\Debug\Lottie.Forms.dll
+D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies.iOS\bin\iPhoneSimulator\Debug\Lottie.Forms.pdb
+D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies.iOS\bin\iPhoneSimulator\Debug\Xamarin.Essentials.dll
+D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies.iOS\bin\iPhoneSimulator\Debug\Xamarin.Essentials.pdb

@@ -6,11 +6,22 @@
              Title="Home">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Name="Refresh" Command="{Binding RefreshCommand}" Order="Primary" Text="Refresh" Priority="0" />
+        <ToolbarItem Icon="refresh.png"  Command="{Binding RefreshCommand}" Order="Primary" Text="Refresh" Priority="0" />
     </ContentPage.ToolbarItems>
 
-    <StackLayout>
-        <Entry VerticalOptions="StartAndExpand" Text="{Binding Search}" Placeholder="Movie"></Entry>
+    <StackLayout Padding="10">
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+            <Image Source="search.png">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+                Command="{Binding RefreshCommand}"/>
+                </Image.GestureRecognizers>
+            </Image>
+            <Entry VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Text="{Binding Search}" Placeholder="Movie"></Entry>
+        </StackLayout>
+        
+        <Frame BorderColor="White">
+            <StackLayout>
         <ListView ItemsSource="{Binding movieSearch.Search}" HasUnevenRows="True" SelectedItem="{Binding SelectedMovie}">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -19,18 +30,23 @@
                         Orientation="Vertical" MinimumHeightRequest="800">
                             <StackLayout Orientation="Horizontal">
                                 <Image Source="{Binding Poster}"/>
-                                <Label Text="{Binding Title}"
-                                TextColor="#f35e20" />
-                                <Label Text="{Binding Year}"
-                                HorizontalOptions="EndAndExpand"
-                                TextColor="#503026" />
-                            </StackLayout>
+                                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                                <Label Text="{Binding Title}" TextColor="#f35e20" />
+                                                <Label Text="{Binding Year}" HorizontalOptions="EndAndExpand" TextColor="#503026" />
+                                            </StackLayout>
+                                            <Label Text="{Binding Type}"></Label>
+                                        </StackLayout>
+                                    </StackLayout>
+                            
                         </StackLayout>
                     </ViewCell>
                     <!--<ImageCell ImageSource="https://m.media-amazon.com/images/M/MV5BODdlMjU0MDYtMWQ1NC00YjFjLTgxMDQtNDYxNTg2ZjJjZDFiXkEyXkFqcGdeQXVyMTU2NTcxNDg@._V1_SX300.jpg" Text="{Binding Title}" Detail="{Binding Year}"></ImageCell>-->
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+            </StackLayout>
+        </Frame>
     </StackLayout>
 
 </ContentPage>

@@ -7,68 +7,79 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem  Icon = "share.png" Command = "{Binding ShareCommand}" 
                 Priority="0" Order="Primary" />
+        <ToolbarItem  Icon = "browser.png" Command = "{Binding WebsiteCommand}"
+                CommandParameter="{Binding DetailMovie.Website}" 
+                Priority="0" Order="Primary" />
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <StackLayout>
-            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                <Image Source="{Binding DetailMovie.Poster}" WidthRequest="150" HeightRequest="250"></Image>
-                <StackLayout>
-                    <Label Text="{Binding DetailMovie.Title}" HorizontalOptions="Start" FontSize="Large"></Label>
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                        <Label Text="{Binding DetailMovie.Genre}" HorizontalOptions="Start" FontSize="Micro"></Label>
-                        <Label Text="|" HorizontalOptions="Start" FontSize="Micro"></Label>
-                        <Label Text="{Binding DetailMovie.Year}" HorizontalOptions="Start" FontSize="Micro"></Label>
-                    </StackLayout>
-                    <Label Text="{Binding DetailMovie.Plot}" HorizontalOptions="StartAndExpand" FontSize="Small"></Label>
-                </StackLayout>
-                
-            </StackLayout>
-            <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Black"/>
+        <ScrollView>
             <StackLayout>
-                <Label Text="Metascore" HorizontalOptions="StartAndExpand" FontSize="Medium"></Label>
-                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" HeightRequest="100">
-                    <Label Text="{Binding DetailMovie.Metascore}" HorizontalOptions="StartAndExpand" FontSize="Small"></Label>
-                    <forms:AnimationView 
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Image Source="{Binding DetailMovie.Poster}" WidthRequest="150" HeightRequest="250"></Image>
+                    <StackLayout>
+                        <Label Text="{Binding DetailMovie.Title}" HorizontalOptions="Start" FontSize="Large"></Label>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Label Text="{Binding DetailMovie.Genre}" HorizontalOptions="Start" FontSize="Micro"></Label>
+                            <Label Text="|" HorizontalOptions="Start" FontSize="Micro"></Label>
+                            <Label Text="{Binding DetailMovie.Year}" HorizontalOptions="Start" FontSize="Micro"></Label>
+                        </StackLayout>
+                        <Label Text="{Binding DetailMovie.Plot}" HorizontalOptions="StartAndExpand" FontSize="Small"></Label>
+                    </StackLayout>
+
+                </StackLayout>
+                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Black"/>
+                <StackLayout Padding="5">
+                    <Label Text="Metascore" HorizontalOptions="Start" FontSize="Small" TextDecorations="Underline"></Label>
+                    <StackLayout Orientation="Vertical">
+                        <Frame CornerRadius="6" BackgroundColor="SkyBlue" HorizontalOptions="Start">
+                            <Label Text="{Binding DetailMovie.Metascore}" HorizontalOptions="Start" FontSize="Small" TextColor="White"/>
+                        </Frame>
+                        <forms:AnimationView 
 	            x:Name="animationView" 
 	            Animation="{Binding Rating}" 
 	            Loop="false" 
 	            AutoPlay="True"
 	            VerticalOptions="FillAndExpand" 
-	            HorizontalOptions="FillAndExpand" />
-                </StackLayout>
-                <Label Text="IMDB rating" HorizontalOptions="StartAndExpand" FontSize="Micro"></Label>
-                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" HeightRequest="100">
-                    <Label Text="{Binding DetailMovie.imdbRating}" HorizontalOptions="StartAndExpand" FontSize="Small"></Label>
-                    <forms:AnimationView 
+	            HorizontalOptions="FillAndExpand" HeightRequest="50"/>
+                    </StackLayout>
+
+                    <Label Text="IMDB rating" HorizontalOptions="Start" FontSize="Small" TextDecorations="Underline"></Label>
+                    <StackLayout Orientation="Vertical">
+                        <Frame CornerRadius="6" BackgroundColor="SkyBlue" HorizontalOptions="Start">
+                            <Label Text="{Binding DetailMovie.imdbRating}" HorizontalOptions="StartAndExpand" FontSize="Small" TextColor="White"/>
+                        </Frame>
+                        <forms:AnimationView 
 	            x:Name="animationView2" 
 	            Animation="{Binding Rating2}" 
 	            Loop="false" 
 	            AutoPlay="True"
 	            VerticalOptions="FillAndExpand" 
-	            HorizontalOptions="FillAndExpand" />
-                </StackLayout>
-            </StackLayout>
-            <StackLayout Orientation="Vertical">
-                <Label HorizontalOptions="Center"
-       VerticalOptions="EndAndExpand">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="For more info go to the " />
-                            <Span Text="Website"
-                                   TextColor="Blue"
-                                   TextDecorations="Underline">
-                                <Span.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding WebsiteCommand}"
-                                          CommandParameter="{Binding DetailMovie.Website}" />
-                                </Span.GestureRecognizers>
-                            </Span>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
+	            HorizontalOptions="FillAndExpand" HeightRequest="50"/>
+                    </StackLayout>
 
+
+                    <Label Text="User rating" HorizontalOptions="Start" FontSize="Small" TextDecorations="Underline"></Label>
+                    <StackLayout Orientation="Vertical">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Frame CornerRadius="6" BackgroundColor="SkyBlue" HorizontalOptions="Start">
+                                <Label Text="{Binding Userrating}" HorizontalOptions="StartAndExpand" FontSize="Small" TextColor="White"/>
+                            </Frame>
+                            <Button HorizontalOptions="EndAndExpand" Text="All reviews" FontSize="Micro" BackgroundColor="SkyBlue" TextColor="White" IsEnabled="{Binding ButtonReviews}" Command="{Binding AllReviewsCommand}"></Button>
+                        </StackLayout>
+
+                        <forms:AnimationView 
+	            x:Name="ReviewAnimationView" 
+	            Animation="{Binding Rating3}" 
+	            Loop="false" 
+	            AutoPlay="True"
+	            VerticalOptions="FillAndExpand" 
+	            HorizontalOptions="FillAndExpand" HeightRequest="50"/>
+                    </StackLayout>
+                </StackLayout>
+                <Button HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" Text="Add Review" BackgroundColor="SkyBlue" Command="{Binding ReviewCommand}" TextColor="White"></Button>
             </StackLayout>
-        </StackLayout>
-        
+
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

@@ -145,6 +145,7 @@
         "com.airbnb.xamarin.forms.lottie.2.6.1.nupkg.sha512",
         "com.airbnb.xamarin.forms.lottie.nuspec",
         "lib/monoandroid81/Lottie.Forms.dll",
+        "lib/monoandroid81/Lottie.Forms.dll.mdb",
         "lib/monoandroid81/Lottie.Forms.pdb",
         "lib/monoandroid81/Lottie.Forms.xml",
         "lib/netstandard2.0/Lottie.Forms.dll",

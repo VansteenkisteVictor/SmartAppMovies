@@ -17,6 +17,9 @@ namespace SmartAppMovies.ViewModels
         {
             _movieService = movieService;
             _navigationService = navigationService;
+            ImgVis = true;
+            ListVis = true;
+
         }
 
         public RelayCommand RefreshCommand
@@ -60,6 +63,48 @@ namespace SmartAppMovies.ViewModels
             set
             {
                 _moviesSearch = value;
+                RaisePropertyChanged(() => movieSearch);
+                //if(value.Response != "False")
+                //{
+                //    ImgVis = false;
+                //    ListVis = true;
+                //}
+                if(value.Response == "True")
+                {
+                    ImgVis = false;
+                    ListVis = true;
+                }
+                else
+                {
+                    ImgVis = true;
+                    ListVis = false;
+                }
+            }
+        }
+
+        private bool _imgVis;
+        public bool ImgVis
+        {
+            get
+            {
+                return _imgVis;
+            }
+            set
+            {
+                _imgVis = value;
+                RaisePropertyChanged(() => movieSearch);
+            }
+        }
+        private bool _listVis;
+        public bool ListVis
+        {
+            get
+            {
+                return _listVis;
+            }
+            set
+            {
+                _listVis = value;
                 RaisePropertyChanged(() => movieSearch);
             }
         }

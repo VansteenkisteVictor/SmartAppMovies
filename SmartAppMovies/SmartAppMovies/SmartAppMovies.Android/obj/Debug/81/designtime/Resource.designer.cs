@@ -2504,6 +2504,12 @@ namespace SmartAppMovies.Droid
 			// aapt resource value: 0x7F090055
 			public const int avd_show_password = 2131296341;
 			
+			// aapt resource value: 0x7F010002
+			public const int browser = 2130771970;
+			
+			// aapt resource value: 0x7F010003
+			public const int camera = 2130771971;
+			
 			// aapt resource value: 0x7F090056
 			public const int design_bottom_navigation_item_background = 2131296342;
 			
@@ -3116,6 +3122,9 @@ namespace SmartAppMovies.Droid
 			// aapt resource value: 0x7F09005C
 			public const int navigation_empty_icon = 2131296348;
 			
+			// aapt resource value: 0x7F010004
+			public const int NotFound = 2130771972;
+			
 			// aapt resource value: 0x7F090054
 			public const int notification_action_background = 2131296340;
 			
@@ -3152,8 +3161,14 @@ namespace SmartAppMovies.Droid
 			// aapt resource value: 0x7F09005F
 			public const int notify_panel_notification_icon_bg = 2131296351;
 			
-			// aapt resource value: 0x7F010002
-			public const int share = 2130771970;
+			// aapt resource value: 0x7F010005
+			public const int refresh = 2130771973;
+			
+			// aapt resource value: 0x7F010006
+			public const int search = 2130771974;
+			
+			// aapt resource value: 0x7F010007
+			public const int share = 2130771975;
 			
 			// aapt resource value: 0x7F090060
 			public const int tooltip_frame_dark = 2131296352;
