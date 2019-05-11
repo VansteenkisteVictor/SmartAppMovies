@@ -7,12 +7,13 @@ using Xamarin.Forms;
 
 namespace SmartAppMovies
 {
-    public partial class MainPage : ContentPage
+    public partial class MainPage : TabbedPage
     {
         public MainPage()
         {
             InitializeComponent();
             BindingContext = App.ViewModelLocator.MainPageViewModel;
+            NavigationPage.SetHasBackButton(this, false);
         }
     }
 }

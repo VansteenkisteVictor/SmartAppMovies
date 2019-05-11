@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SmartAppMovies.Views.Login"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="SkyBlue">
+            <Frame BackgroundColor="White" CornerRadius="6" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <StackLayout HeightRequest="400" WidthRequest="250">
+                    <Label FontSize="Medium" HorizontalOptions="CenterAndExpand">Login</Label>
+                    <Label TextColor="Red" Text="{Binding Error}"></Label>
+                    <Label>Email</Label>
+                    <Entry Keyboard="Email" Text="{Binding Email}"></Entry>
+                    <Label>Password</Label>
+                    <Entry IsPassword="True" Text="{Binding Password}"></Entry>
+                    <Button Text="value" Command="{Binding LoginCommand}"></Button>
+                    <Label Text="Don't have an account ?"></Label>
+                    <Button Text="Register" Command="{Binding navRegister}"></Button>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

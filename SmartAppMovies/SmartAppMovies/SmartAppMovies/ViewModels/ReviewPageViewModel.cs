@@ -5,6 +5,7 @@ using SmartAppMovies.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace SmartAppMovies.ViewModels
 {
@@ -64,19 +65,6 @@ namespace SmartAppMovies.ViewModels
         //    }
         //}
 
-        private string _name;
-        public string Name
-        {
-            get
-            {
-                return _name;
-            }
-            set
-            {
-                _name = value;
-                RaisePropertyChanged(() => Name);
-            }
-        }
 
         private string _comment;
         public string Comment
@@ -135,19 +123,22 @@ namespace SmartAppMovies.ViewModels
         {
             get
             {
-                return new RelayCommand(() =>
+                return new RelayCommand(async () =>
                 {
                     try
                     {
+                        string username = Application.Current.Properties["UserName"].ToString();
+                        Login user = await _movieService.GetLogin(username);
                         Review review = new Review();
-                        review.Name = Name;
+                        review.Name = user.Username;
                         review.Comment = Comment;
                         decimal slider = Math.Round(Convert.ToDecimal(SliderValue));
                         int slider2 = Convert.ToInt32(slider);
                         review.Score = slider2;
                         review.MovieId = SelectedMovie.imdbID;
-                        review.Id = Guid.NewGuid();
-                        _movieService.PostReview(review);
+                        review.Id = Guid.NewGuid(); 
+                        review.UserId = user.Id.ToString();
+                        await _movieService.PostReview(review);
                         _navigationService.GoBack();
                     }
                     catch (Exception ex)

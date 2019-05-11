@@ -6,10 +6,11 @@ using SmartAppMovies.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace SmartAppMovies.ViewModels
 {
-    public class MainPageViewModel :ViewModelBase
+    public class MainPageViewModel : ViewModelBase
     {
         private readonly IMovieService _movieService;
         private ICustomNavigation _navigationService;
@@ -19,6 +20,9 @@ namespace SmartAppMovies.ViewModels
             _navigationService = navigationService;
             ImgVis = true;
             ListVis = true;
+            GetReviewsAsync();
+
+
 
         }
 
@@ -47,8 +51,23 @@ namespace SmartAppMovies.ViewModels
             {
                 movieSearch = await _movieService.GetMovieSearch(search);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
+                throw ex;
+            }
+        }
+
+        public async void GetReviewsAsync()
+        {
+            try
+            {
+                string username = Application.Current.Properties["UserName"].ToString();
+                Login user = await _movieService.GetLogin(username);
+                MyReviews = await _movieService.GetUserReview(user.Id.ToString());
+            }
+            catch (Exception ex)
+            {
+
                 throw ex;
             }
         }
@@ -69,7 +88,7 @@ namespace SmartAppMovies.ViewModels
                 //    ImgVis = false;
                 //    ListVis = true;
                 //}
-                if(value.Response == "True")
+                if (value.Response == "True")
                 {
                     ImgVis = false;
                     ListVis = true;
@@ -118,7 +137,7 @@ namespace SmartAppMovies.ViewModels
             }
             set
             {
-                if(value != null)
+                if (value != null)
                 {
                     _errorMessage = value;
                     RaisePropertyChanged(() => errorMessage);
@@ -136,7 +155,7 @@ namespace SmartAppMovies.ViewModels
             }
             set
             {
-                if(value != null && value.Length > 3)
+                if (value != null && value.Length > 3)
                 {
                     try
                     {
@@ -176,5 +195,40 @@ namespace SmartAppMovies.ViewModels
                 }
             }
         }
+
+        private Review _mySelectedReview;
+        public Review MySelectedReview
+        {
+            get { return _mySelectedReview; }
+            set
+            {
+                _mySelectedReview = value;
+                RaisePropertyChanged(() => MySelectedReview);
+            }
+        }
+
+        private List<Review> _myReviews;
+        public List<Review> MyReviews
+        {
+            get { return _myReviews; }
+            set
+            {
+                if (value != null)
+                {
+                    _myReviews = value;
+                    RaisePropertyChanged(() => MyReviews);
+                    try
+                    {
+                        //_navigationService.NavigateTo(ViewModelLocator.DetailReviewPage, _mySelectedReview);
+                    }
+                    catch (Exception ex)
+                    {
+
+                        throw ex;
+                    }
+                }
+            }
+        }
     }
 }
+

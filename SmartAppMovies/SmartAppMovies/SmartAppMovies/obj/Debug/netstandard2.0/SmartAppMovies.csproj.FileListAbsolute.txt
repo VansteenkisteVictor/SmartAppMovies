@@ -13,3 +13,5 @@ D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies\bin\Debug\ne
 D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies\obj\Debug\netstandard2.0\XamlC.stamp
 D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies\obj\Debug\netstandard2.0\SmartAppMovies.dll
 D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies\obj\Debug\netstandard2.0\SmartAppMovies.pdb
+D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies\obj\Debug\netstandard2.0\Views\Login.xaml.g.cs
+D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies\obj\Debug\netstandard2.0\Views\Register.xaml.g.cs

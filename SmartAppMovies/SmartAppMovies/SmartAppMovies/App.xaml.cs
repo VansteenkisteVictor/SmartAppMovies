@@ -29,10 +29,12 @@ namespace SmartAppMovies
             nav.Configure(ViewModelLocator.DetailPage, typeof(DetailPage));
             nav.Configure(ViewModelLocator.Review, typeof(Review));
             nav.Configure(ViewModelLocator.AllReviews, typeof(AllReviews));
+            nav.Configure(ViewModelLocator.Register, typeof(Register));
+            nav.Configure(ViewModelLocator.Login, typeof(Login));
 
             SimpleIoc.Default.Register<ICustomNavigation>(() => nav);
 
-            var mainPage = new NavigationPage(new MainPage());
+            var mainPage = new NavigationPage(new Login());
             nav.Initialize(mainPage);
             MainPage = mainPage;
         }

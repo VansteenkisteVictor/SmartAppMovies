@@ -13,6 +13,8 @@ namespace SmartAppMovies.ViewModels
         public const string DetailPage = "DetailPage";
         public const string Review = "Review";
         public const string AllReviews = "AllReviews";
+        public const string Login = "Login";
+        public const string Register = "Register";
 
         public ViewModelLocator()
         {
@@ -20,11 +22,16 @@ namespace SmartAppMovies.ViewModels
             SimpleIoc.Default.Register<DetailPageViewModel>();
             SimpleIoc.Default.Register<ReviewPageViewModel>();
             SimpleIoc.Default.Register<AllReviewsPageViewModel>();
+            SimpleIoc.Default.Register<LoginViewModel>();
+            SimpleIoc.Default.Register<RegisterViewModel>();
             SimpleIoc.Default.Register<IDetailRepo, DetailRepo>();
             SimpleIoc.Default.Register<ISearchRepo, SearchRepo>();
             SimpleIoc.Default.Register<IMovieService, MovieService>();
             SimpleIoc.Default.Register<IReviewRepo, ReviewRepo>();
             SimpleIoc.Default.Register<IAddReviewRepo, AddReviewRepo>();
+            SimpleIoc.Default.Register<IAddLogin, AddLogin>();
+            SimpleIoc.Default.Register<IGetLogin, GetLogin>();
+            SimpleIoc.Default.Register<IGetUserReview, GetUserReview>();
         }
 
         public MainPageViewModel MainPageViewModel
@@ -59,6 +66,20 @@ namespace SmartAppMovies.ViewModels
             }
         }
 
+        public LoginViewModel LoginViewModel
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<LoginViewModel>();
+            }
+        }
 
+        public RegisterViewModel RegisterViewModel
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<RegisterViewModel>();
+            }
+        }
     }
 }

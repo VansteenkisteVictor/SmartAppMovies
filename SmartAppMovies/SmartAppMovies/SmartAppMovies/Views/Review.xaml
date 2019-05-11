@@ -9,8 +9,6 @@
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
             <Image Source="{Binding SelectedMovie.Poster}"></Image>
-            <Label Text="Name"></Label>
-            <Entry Text="{Binding Name}"></Entry>
             <Label Text="Comment"></Label>
             <StackLayout BackgroundColor="Black" Padding="1" Margin="1">
                 <Editor BackgroundColor="White" HeightRequest="150" Text="{Binding Comment}"/>

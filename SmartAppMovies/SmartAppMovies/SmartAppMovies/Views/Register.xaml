@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SmartAppMovies.Views.Register"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="SkyBlue">
+            <Frame BackgroundColor="White" CornerRadius="6" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <StackLayout HeightRequest="400" WidthRequest="250">
+                    <Label FontSize="Medium" HorizontalOptions="CenterAndExpand">Register</Label>
+                    <Label TextColor="Red" Text="{Binding Error}"></Label>
+                    <Label>Email</Label>
+                    <Entry Keyboard="Email" Text="{Binding Email}"></Entry>
+                    <Label>Password</Label>
+                    <Entry IsPassword="True" Text="{Binding Password}"></Entry>
+                    <Label>Confirm Password</Label>
+                    <Entry IsPassword="True" Text="{Binding Password2}"></Entry>
+                    <Button Text="Register" Command="{Binding RegisterCommand}"></Button>
+                    <Label Text="Already have an Account ?"></Label>
+                    <Button Text="Login" Command="{Binding navLogin}"></Button>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
