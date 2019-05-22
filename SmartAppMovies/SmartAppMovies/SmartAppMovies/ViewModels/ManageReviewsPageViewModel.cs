@@ -18,8 +18,8 @@ namespace SmartAppMovies.ViewModels
             _navigationService = navigationService;
         }
 
-        private List<Models.Review> _userReviews;
-        public List<Models.Review> UserReviews
+        private List<Review> _userReviews;
+        public List<Review> UserReviews
         {
             get
             {
