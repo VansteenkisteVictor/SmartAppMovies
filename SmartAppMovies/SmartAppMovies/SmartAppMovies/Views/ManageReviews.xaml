@@ -25,8 +25,8 @@
                 </ListView.ItemTemplate>
             </ListView>
             <StackLayout Orientation="Horizontal">
-                <Button HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" Text="Delete Review" BackgroundColor="Red" Command="{Binding DeleteCommand}" IsEnabled="{Binding UserReviews}" TextColor="White"></Button>
-                <Button HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" Text="Update Review" BackgroundColor="SkyBlue" Command="{Binding UpdateCommand}" IsEnabled="{Binding UserReviews}" TextColor="White"></Button>
+                <Button HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" Text="Delete Review" BackgroundColor="Red" Command="{Binding DeleteCommand}" IsEnabled="{Binding ManageAllow}" TextColor="White"></Button>
+                <Button HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" Text="Update Review" BackgroundColor="SkyBlue" Command="{Binding UpdateCommand}" IsEnabled="{Binding ManageAllow}" TextColor="White"></Button>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

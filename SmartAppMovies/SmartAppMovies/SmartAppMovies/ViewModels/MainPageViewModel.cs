@@ -111,7 +111,7 @@ namespace SmartAppMovies.ViewModels
                 {
                     try
                     {
-                        _navigationService.NavigateTo(ViewModelLocator.ManageReviews,MyReviews);
+                        _navigationService.NavigateTo(ViewModelLocator.ManageReviews, MyReviews);
                     }
                     catch (Exception ex)
                     {

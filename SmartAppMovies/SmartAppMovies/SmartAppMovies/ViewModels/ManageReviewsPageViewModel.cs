@@ -5,6 +5,8 @@ using SmartAppMovies.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace SmartAppMovies.ViewModels
 {
@@ -16,7 +18,9 @@ namespace SmartAppMovies.ViewModels
         {
             _movieService = movieService;
             _navigationService = navigationService;
+            //GetPersonalAsync();
         }
+
 
         private List<Review> _userReviews;
         public List<Review> UserReviews
@@ -29,14 +33,6 @@ namespace SmartAppMovies.ViewModels
             {
                 _userReviews = value;
                 RaisePropertyChanged(() => UserReviews);
-                //if(UserReviews != null)
-                //{
-                //    ManageAllow = true;
-                //}
-                //else
-                //{
-                //    ManageAllow = false;
-                //}
             }
         }
 
@@ -48,19 +44,27 @@ namespace SmartAppMovies.ViewModels
             {
                 _mySelectedReview = value;
                 RaisePropertyChanged(() => MySelectedReview);
+                if (MySelectedReview != null)
+                {
+                    ManageAllow = true;
+                }
+                else
+                {
+                    ManageAllow = false;
+                }
             }
         }
 
-        //private bool _manageAllow;
-        //public bool ManageAllow
-        //{
-        //    get { return _manageAllow; }
-        //    set
-        //    {
-        //        _manageAllow = value;
-        //        RaisePropertyChanged(() => ManageAllow);
-        //    }
-        //}
+        private bool _manageAllow;
+        public bool ManageAllow
+        {
+            get { return _manageAllow; }
+            set
+            {
+                _manageAllow = value;
+                RaisePropertyChanged(() => ManageAllow);
+            }
+        }
 
         public RelayCommand DeleteCommand
         {
