@@ -6,6 +6,7 @@ using SmartAppMovies.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace SmartAppMovies.ViewModels
@@ -16,13 +17,12 @@ namespace SmartAppMovies.ViewModels
         private ICustomNavigation _navigationService;
         public MainPageViewModel(IMovieService movieService, ICustomNavigation navigationService)
         {
+            
             _movieService = movieService;
             _navigationService = navigationService;
             ImgVis = true;
             ListVis = true;
-            GetReviewsAsync();
-
-
+            GetPersonalAsync();
 
         }
 
@@ -45,6 +45,85 @@ namespace SmartAppMovies.ViewModels
             }
         }
 
+        public RelayCommand RefreshReviewsCommand
+        {
+            get
+            {
+                return new RelayCommand(async () =>
+                {
+                    try
+                    {
+                        await GetPersonalAsync();
+                    }
+                    catch (Exception ex)
+                    {
+                        throw ex;
+                    }
+
+                });
+            }
+        }
+
+        public RelayCommand LogOutCommand
+        {
+            get
+            {
+                return new RelayCommand(() =>
+                {
+                    try
+                    {
+                        Application.Current.Properties["UserName"] = null;
+                        _navigationService.GoBack();
+                    }
+                    catch (Exception ex)
+                    {
+                        throw ex;
+                    }
+
+                });
+            }
+        }
+
+        public RelayCommand PreferencesCommand
+        {
+            get
+            {
+                return new RelayCommand(() =>
+                {
+                    try
+                    {
+                        _navigationService.NavigateTo(ViewModelLocator.Preferences);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw ex;
+                    }
+
+                });
+            }
+        }
+
+        public RelayCommand ManageReviews
+        {
+            get
+            {
+                return new RelayCommand(() =>
+                {
+                    try
+                    {
+                        _navigationService.NavigateTo(ViewModelLocator.ManageReviews,MyReviews);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw ex;
+                    }
+
+                });
+            }
+        }
+
+
+
         public async void GetDataAsync(string search)
         {
             try
@@ -57,13 +136,18 @@ namespace SmartAppMovies.ViewModels
             }
         }
 
-        public async void GetReviewsAsync()
+        public async Task GetPersonalAsync()
         {
             try
             {
-                string username = Application.Current.Properties["UserName"].ToString();
-                Login user = await _movieService.GetLogin(username);
-                MyReviews = await _movieService.GetUserReview(user.Id.ToString());
+                string id = Application.Current.Properties["ID"].ToString();
+                List<Review> ReviewsTemp = await _movieService.GetUserReview(id);
+                foreach(Review review in ReviewsTemp)
+                {
+                    MovieDetail movie = await _movieService.GetMovieDetail(review.MovieId);
+                    review.MyMovie = movie;
+                }
+                MyReviews = ReviewsTemp;
             }
             catch (Exception ex)
             {
@@ -202,24 +286,19 @@ namespace SmartAppMovies.ViewModels
             get { return _mySelectedReview; }
             set
             {
-                _mySelectedReview = value;
-                RaisePropertyChanged(() => MySelectedReview);
-            }
-        }
-
-        private List<Review> _myReviews;
-        public List<Review> MyReviews
-        {
-            get { return _myReviews; }
-            set
-            {
-                if (value != null)
+                if(value != null)
                 {
-                    _myReviews = value;
-                    RaisePropertyChanged(() => MyReviews);
+                    _mySelectedReview = value;
+                    RaisePropertyChanged(() => MySelectedReview);
                     try
                     {
-                        //_navigationService.NavigateTo(ViewModelLocator.DetailReviewPage, _mySelectedReview);
+                        Search search = new Search();
+                        search.Title = _mySelectedReview.MyMovie.Title;
+                        search.Poster = _mySelectedReview.MyMovie.Poster;
+                        search.Type = _mySelectedReview.MyMovie.Type;
+                        search.Year = _mySelectedReview.MyMovie.Year;
+                        search.imdbID = _mySelectedReview.MyMovie.imdbID;
+                        _navigationService.NavigateTo(ViewModelLocator.DetailPage, search);
                     }
                     catch (Exception ex)
                     {
@@ -229,6 +308,19 @@ namespace SmartAppMovies.ViewModels
                 }
             }
         }
+
+        private List<Review> _myReviews;
+        public List<Review> MyReviews
+        {
+            get { return _myReviews; }
+            set
+            {
+                Console.Write(_myReviews);
+               _myReviews = value;
+               RaisePropertyChanged(() => MyReviews);
+            }
+        }
+    
     }
 }
 

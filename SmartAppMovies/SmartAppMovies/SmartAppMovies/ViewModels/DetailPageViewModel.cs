@@ -8,6 +8,7 @@ using System.Globalization;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace SmartAppMovies.ViewModels
 {
@@ -77,6 +78,10 @@ namespace SmartAppMovies.ViewModels
             {
                 _detailMovie = value;
                 RaisePropertyChanged(() => DetailMovie);
+                if (_detailMovie.Poster == "N/A" || _detailMovie.Poster == null)
+                {
+                    _detailMovie.Poster = "notfoundPoster.png";
+                }
                 if (DetailMovie.Metascore != null && DetailMovie.Metascore != "N/A")
                 {
                     float FloatRating = ((float.Parse(DetailMovie.Metascore) / 100) * 5)+1;
@@ -86,7 +91,7 @@ namespace SmartAppMovies.ViewModels
                 {
                     Rating = "data6.json";
                 }
-                if(DetailMovie.imdbRating != null && DetailMovie.imdbRating != null)
+                if(DetailMovie.imdbRating != null && DetailMovie.imdbRating != "N/A")
                 {
                     float FloatRating = ((float.Parse(DetailMovie.imdbRating) / 10) * 5)+1;
                     Rating2 = GetRating(FloatRating);
@@ -170,6 +175,20 @@ namespace SmartAppMovies.ViewModels
             }
         }
 
+        private bool _buttonAddReviews;
+        public bool ButtonAddReviews
+        {
+            get
+            {
+                return _buttonAddReviews;
+            }
+            set
+            {
+                _buttonAddReviews = value;
+                RaisePropertyChanged(() => ButtonAddReviews);
+            }
+        }
+
         public RelayCommand ReviewCommand
         {
             get
@@ -178,7 +197,7 @@ namespace SmartAppMovies.ViewModels
                 {
                     try
                     {
-                        _navigationService.NavigateTo(ViewModelLocator.Review, DetailMovie);
+                        _navigationService.NavigateTo(ViewModelLocator.AddReview, DetailMovie);
                     }
                     catch (Exception ex)
                     {
@@ -269,10 +288,20 @@ namespace SmartAppMovies.ViewModels
                 if (Reviews.Count != 0)
                 {
                     ButtonReviews = true;
+                    string username = Application.Current.Properties["UserName"].ToString();
+                    ButtonAddReviews = true;
+                    for (int i = 0; i < Reviews.Count; i++)
+                    {
+                        if(Reviews[i].Name == username)
+                        {
+                            ButtonAddReviews = false;
+                        }
+                    }
                 }
                 else
                 {
                     ButtonReviews = false;
+                    ButtonAddReviews = true;
                 }
             }
             catch (Exception ex)

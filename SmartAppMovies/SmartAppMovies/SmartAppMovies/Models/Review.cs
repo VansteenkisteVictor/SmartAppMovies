@@ -12,5 +12,6 @@ namespace SmartAppMovies.Models
         public int Score { get; set; }
         public string MovieId { get; set; }
         public string UserId { get; set; }
+        public MovieDetail MyMovie { get; set; }
     }
 }

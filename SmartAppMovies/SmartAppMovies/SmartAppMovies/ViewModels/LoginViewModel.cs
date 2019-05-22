@@ -29,21 +29,21 @@ namespace SmartAppMovies.ViewModels
                 {
                     try
                     {
-                        if(Email != null && Password != null)
+                        if(Email == null || Password == null || Email == "" || Password == "")
+                        {
+                            Error = "One or more fields not filled in";
+                        }
+                        else
                         {
                             if (await LogUserIn())
                             {
-                                _navigationService.NavigateTo(ViewModelLocator.MainPage);
                                 Application.Current.Properties["UserName"] = Email;
+                                _navigationService.NavigateTo(ViewModelLocator.MainPage);
                             }
                             else
                             {
                                 Error = "Incorrect username or password";
                             }
-                        }
-                        else
-                        {
-                            Error = "One or more fields not filled in";
                         }
 
                     }
@@ -123,6 +123,7 @@ namespace SmartAppMovies.ViewModels
             byte[] inputpassword = GenerateSaltedHash(Password, login.Salt);
             if(Encoding.ASCII.GetString(inputpassword) == login.Password)
             {
+                Application.Current.Properties["ID"] = login.Id;
                 return true;
             }
             else

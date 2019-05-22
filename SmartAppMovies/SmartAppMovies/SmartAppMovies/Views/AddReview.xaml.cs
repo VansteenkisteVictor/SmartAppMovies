@@ -11,9 +11,9 @@ using Xamarin.Forms.Xaml;
 namespace SmartAppMovies.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Review : ContentPage
+    public partial class AddReview : ContentPage
     {
-        public Review(MovieDetail detailMovie)
+        public AddReview(MovieDetail detailMovie)
         {
             InitializeComponent();
             BindingContext = App.ViewModelLocator.ReviewPageViewModel;

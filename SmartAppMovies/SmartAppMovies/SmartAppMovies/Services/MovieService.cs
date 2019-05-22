@@ -16,7 +16,9 @@ namespace SmartAppMovies.Services
         private readonly IAddLogin _addLogin;
         private readonly IGetLogin _getLogin;
         private readonly IGetUserReview _getUserReview;
-        public MovieService(ISearchRepo searchRepo,IDetailRepo detailRepo,IReviewRepo reviewRepo,IAddReviewRepo addReviewRepo, IGetLogin getLogin, IAddLogin addLogin, IGetUserReview getUserReview)
+        private readonly IDeleteReview _deleteReview;
+        private readonly IUpdateReview _updateReview;
+        public MovieService(ISearchRepo searchRepo,IDetailRepo detailRepo,IReviewRepo reviewRepo,IAddReviewRepo addReviewRepo, IGetLogin getLogin, IAddLogin addLogin, IGetUserReview getUserReview,IDeleteReview deleteReview, IUpdateReview updateReview)
         {
             _searchRepo = searchRepo;
             _detailRepo = detailRepo;
@@ -25,6 +27,8 @@ namespace SmartAppMovies.Services
             _addLogin = addLogin;
             _getLogin = getLogin;
             _getUserReview = getUserReview;
+            _deleteReview = deleteReview;
+            _updateReview = updateReview;
             
         }
         public async Task<MovieSearch> GetMovieSearch(string q)
@@ -40,14 +44,24 @@ namespace SmartAppMovies.Services
             return await _reviewRepo.GetMovieReview(q);
         }
 
-        public async Task PostReview(Review review)
+        public async Task PostReview(PostReview review)
         {
             await _addReviewRepo.AddReview(review);
+        }
+
+        public async Task UpdateReview(PostReview review)
+        {
+            await _updateReview.Update(review);
         }
 
         public async Task AddLogin(Login login)
         {
             await _addLogin.AddLoginAsync(login);
+        }
+
+        public async Task DeleteReview(string q)
+        {
+            await _deleteReview.Delete(q);
         }
 
         public async Task<Login> GetLogin(string q)

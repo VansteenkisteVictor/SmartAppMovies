@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "df6b211f7a2ec42dd6d3cd93b5f185eee1509184"
+    "signature": "0dff78ca7c091db97c5a8e0d3af4133b7bcc5ba5"
   },
   "compilationOptions": {},
   "targets": {
@@ -13,7 +13,7 @@
           "Flurl.Http": "2.4.1",
           "MvvmLightLibsStd10": "5.4.1.1",
           "NETStandard.Library": "2.0.3",
-          "Xamarin.Essentials": "1.1.0",
+          "Xamarin.Essentials": "1.0.1",
           "Xamarin.Forms": "3.4.0.1008975"
         },
         "runtime": {
@@ -90,7 +90,7 @@
           }
         }
       },
-      "Xamarin.Essentials/1.1.0": {
+      "Xamarin.Essentials/1.0.1": {
         "dependencies": {
           "System.Numerics.Vectors": "4.5.0"
         },
@@ -188,12 +188,12 @@
       "path": "system.text.encoding.codepages/4.4.0",
       "hashPath": "system.text.encoding.codepages.4.4.0.nupkg.sha512"
     },
-    "Xamarin.Essentials/1.1.0": {
+    "Xamarin.Essentials/1.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-W0XOt1dNMAE2POcsVotoKDDy5FdAOnR0qULKl6WI4kQEMxQ1sp84DsSU5iacV7oQUMuPhUBAm/3ywks0HO1QrQ==",
-      "path": "xamarin.essentials/1.1.0",
-      "hashPath": "xamarin.essentials.1.1.0.nupkg.sha512"
+      "sha512": "sha512-cGSje2LlYsCdscPt2zAG4e0Zzr08zc21Cj4DAMub3GR37lc/vzAVwGxco8NeCSzcZs147wYbXkFCXwOr4LUO9A==",
+      "path": "xamarin.essentials/1.0.1",
+      "hashPath": "xamarin.essentials.1.0.1.nupkg.sha512"
     },
     "Xamarin.Forms/3.4.0.1008975": {
       "type": "package",

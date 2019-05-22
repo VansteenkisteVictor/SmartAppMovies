@@ -11,9 +11,9 @@ namespace SmartAppMovies
     {
         public MainPage()
         {
-            InitializeComponent();
             BindingContext = App.ViewModelLocator.MainPageViewModel;
             NavigationPage.SetHasBackButton(this, false);
+            InitializeComponent();
         }
     }
 }

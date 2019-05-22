@@ -13,9 +13,9 @@
                     <Entry Keyboard="Email" Text="{Binding Email}"></Entry>
                     <Label>Password</Label>
                     <Entry IsPassword="True" Text="{Binding Password}"></Entry>
-                    <Button Text="value" Command="{Binding LoginCommand}"></Button>
+                    <Button BackgroundColor="SkyBlue" TextColor="White" Text="Login" Command="{Binding LoginCommand}"></Button>
                     <Label Text="Don't have an account ?"></Label>
-                    <Button Text="Register" Command="{Binding navRegister}"></Button>
+                    <Button BackgroundColor="SkyBlue" TextColor="White" Text="Register" Command="{Binding navRegister}"></Button>
                 </StackLayout>
             </Frame>
         </StackLayout>

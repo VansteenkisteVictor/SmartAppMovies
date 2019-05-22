@@ -1,19 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SmartAppMovies.Views.Review"
-            xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms">
+             x:Class="SmartAppMovies.Views.UpdateReview"
+             xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="{Binding SelectedMovie.Title}"
+            <Label Text="{Binding ReviewUpdate.MyMovie.Title}"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-            <Image Source="{Binding SelectedMovie.Poster}"></Image>
+            <Image Source="{Binding ReviewUpdate.MyMovie.Poster}"></Image>
             <Label Text="Comment"></Label>
             <StackLayout BackgroundColor="Black" Padding="1" Margin="1">
-                <Editor BackgroundColor="White" HeightRequest="150" Text="{Binding Comment}"/>
+                <Editor BackgroundColor="White" HeightRequest="150" Text="{Binding ReviewUpdate.Comment}"/>
             </StackLayout>
-            <Slider Maximum="5" Value="{Binding SliderValue}" MaximumTrackColor="CadetBlue" MinimumTrackColor="Blue" ThumbColor="LightBlue"></Slider>
+            <Slider Maximum="5" Value="{Binding ReviewUpdate.Score}" MaximumTrackColor="CadetBlue" MinimumTrackColor="Blue" ThumbColor="LightBlue"></Slider>
             <forms:AnimationView 
 	            x:Name="animationView2" 
 	            Animation="{Binding Rating}" 
@@ -22,7 +22,7 @@
 	            VerticalOptions="FillAndExpand"
 	            HorizontalOptions="FillAndExpand"
                 HeightRequest="100"/>
-            <Button HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" Text="Send Review" Command="{Binding AddReviewCommand}"></Button>
+            <Button BackgroundColor="SkyBlue" TextColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" Text="Send Review" Command="{Binding UpdateCommand}"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -15,9 +15,9 @@
                     <Entry IsPassword="True" Text="{Binding Password}"></Entry>
                     <Label>Confirm Password</Label>
                     <Entry IsPassword="True" Text="{Binding Password2}"></Entry>
-                    <Button Text="Register" Command="{Binding RegisterCommand}"></Button>
+                    <Button BackgroundColor="SkyBlue" TextColor="White" Text="Register" Command="{Binding RegisterCommand}"></Button>
                     <Label Text="Already have an Account ?"></Label>
-                    <Button Text="Login" Command="{Binding navLogin}"></Button>
+                    <Button BackgroundColor="SkyBlue" TextColor="White" Text="Login" Command="{Binding navLogin}"></Button>
                 </StackLayout>
             </Frame>
         </StackLayout>

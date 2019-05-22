@@ -77,7 +77,7 @@
 	            HorizontalOptions="FillAndExpand" HeightRequest="50"/>
                     </StackLayout>
                 </StackLayout>
-                <Button HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" Text="Add Review" BackgroundColor="SkyBlue" Command="{Binding ReviewCommand}" TextColor="White"></Button>
+                <Button HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" Text="Add Review" BackgroundColor="SkyBlue" Command="{Binding ReviewCommand}" IsEnabled="{Binding ButtonAddReviews}" TextColor="White"></Button>
             </StackLayout>
 
         </ScrollView>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SmartAppMovies.Views.ManageReviews">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView ItemsSource="{Binding UserReviews}" HasUnevenRows="True" SelectedItem="{Binding MySelectedReview}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout
+                        Orientation="Vertical" MinimumHeightRequest="800">
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="{Binding MyMovie.Poster}"/>
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                                        <Label Text="{Binding MyMovie.Title}"></Label>
+                                        <Label Text="{Binding MyMovie}"></Label>
+                                        <Label Text="{Binding Comment}"></Label>
+                                        <Label HorizontalOptions="CenterAndExpand" Text="{Binding Score}"></Label>
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout Orientation="Horizontal">
+                <Button HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" Text="Delete Review" BackgroundColor="Red" Command="{Binding DeleteCommand}" IsEnabled="{Binding UserReviews}" TextColor="White"></Button>
+                <Button HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" Text="Update Review" BackgroundColor="SkyBlue" Command="{Binding UpdateCommand}" IsEnabled="{Binding UserReviews}" TextColor="White"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

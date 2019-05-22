@@ -11,10 +11,13 @@ namespace SmartAppMovies.ViewModels
     {
         public const string MainPage = "MainPage";
         public const string DetailPage = "DetailPage";
-        public const string Review = "Review";
+        public const string AddReview = "AddReview";
         public const string AllReviews = "AllReviews";
         public const string Login = "Login";
         public const string Register = "Register";
+        public const string ManageReviews = "ManageReviews";
+        public const string UpdateReview = "UpdateReview";
+        public const string Preferences = "Preferences";
 
         public ViewModelLocator()
         {
@@ -24,6 +27,9 @@ namespace SmartAppMovies.ViewModels
             SimpleIoc.Default.Register<AllReviewsPageViewModel>();
             SimpleIoc.Default.Register<LoginViewModel>();
             SimpleIoc.Default.Register<RegisterViewModel>();
+            SimpleIoc.Default.Register<ManageReviewsPageViewModel>();
+            SimpleIoc.Default.Register<UpdateReviewPageViewModel>();
+            SimpleIoc.Default.Register<PreferencesViewModel>();
             SimpleIoc.Default.Register<IDetailRepo, DetailRepo>();
             SimpleIoc.Default.Register<ISearchRepo, SearchRepo>();
             SimpleIoc.Default.Register<IMovieService, MovieService>();
@@ -32,6 +38,9 @@ namespace SmartAppMovies.ViewModels
             SimpleIoc.Default.Register<IAddLogin, AddLogin>();
             SimpleIoc.Default.Register<IGetLogin, GetLogin>();
             SimpleIoc.Default.Register<IGetUserReview, GetUserReview>();
+            SimpleIoc.Default.Register<IUpdateReview, UpdateReview>();
+            SimpleIoc.Default.Register<IDeleteReview, DeleteReview>();
+            
         }
 
         public MainPageViewModel MainPageViewModel
@@ -41,6 +50,7 @@ namespace SmartAppMovies.ViewModels
                 return SimpleIoc.Default.GetInstance<MainPageViewModel>();
             }
         }
+
 
         public DetailPageViewModel DetailPageViewModel
         {
@@ -79,6 +89,30 @@ namespace SmartAppMovies.ViewModels
             get
             {
                 return SimpleIoc.Default.GetInstance<RegisterViewModel>();
+            }
+        }
+
+        public ManageReviewsPageViewModel ManageReviewsViewModel
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<ManageReviewsPageViewModel>();
+            }
+        }
+
+        public UpdateReviewPageViewModel UpdateReviewPageViewModel
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<UpdateReviewPageViewModel>();
+            }
+        }
+
+        public PreferencesViewModel PreferencesViewModel
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<PreferencesViewModel>();
             }
         }
     }

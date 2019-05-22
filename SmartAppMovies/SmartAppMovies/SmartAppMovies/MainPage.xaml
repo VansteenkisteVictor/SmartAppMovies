@@ -4,7 +4,14 @@
              xmlns:local="clr-namespace:SmartAppMovies"
              x:Class="SmartAppMovies.MainPage"
              Title="Home">
-    
+
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem  Text="Logout" Command = "{Binding LogOutCommand}" 
+                Priority="0" Order="Primary" />
+        <ToolbarItem  Text="Preferences" Command = "{Binding PreferencesCommand}" 
+                Priority="0" Order="Primary" />
+    </TabbedPage.ToolbarItems>
+
     <ContentPage Title="Search">
         <StackLayout Padding="10">
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
@@ -32,7 +39,6 @@
                                         </StackLayout>
                                     </StackLayout>
                                 </ViewCell>
-                                <!--<ImageCell ImageSource="https://m.media-amazon.com/images/M/MV5BODdlMjU0MDYtMWQ1NC00YjFjLTgxMDQtNDYxNTg2ZjJjZDFiXkEyXkFqcGdeQXVyMTU2NTcxNDg@._V1_SX300.jpg" Text="{Binding Title}" Detail="{Binding Year}"></ImageCell>-->
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
@@ -43,23 +49,27 @@
     <ContentPage Title="My Reviews">
         <Frame BorderColor="White">
             <StackLayout>
+                <ImageButton Source="refresh.png" Command="{Binding RefreshReviewsCommand}" BackgroundColor="SkyBlue" WidthRequest="35" HeightRequest="35" HorizontalOptions="End" Padding="10"></ImageButton>
                 <ListView ItemsSource="{Binding MyReviews}" HasUnevenRows="True" SelectedItem="{Binding MySelectedReview}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <StackLayout
-                        Orientation="Vertical" MinimumHeightRequest="800">
-                                    <StackLayout Orientation="Vertical">
-                                        <Label Text="{Binding Name}"></Label>
-                                        <Label Text="{Binding Comment}"></Label>
-                                        <Label HorizontalOptions="CenterAndExpand" Text="{Binding Score}"></Label>
+                                <StackLayout Orientation="Vertical" MinimumHeightRequest="800">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Image Source="{Binding MyMovie.Poster}"/>
+                                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                                            <Label Text="{Binding MyMovie.Title}"></Label>
+                                            <Label Text="{Binding MyMovie}"></Label>
+                                            <Label Text="{Binding Comment}"></Label>
+                                            <Label HorizontalOptions="CenterAndExpand" Text="{Binding Score}"></Label>
+                                        </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
                             </ViewCell>
-                            <!--<ImageCell ImageSource="https://m.media-amazon.com/images/M/MV5BODdlMjU0MDYtMWQ1NC00YjFjLTgxMDQtNDYxNTg2ZjJjZDFiXkEyXkFqcGdeQXVyMTU2NTcxNDg@._V1_SX300.jpg" Text="{Binding Title}" Detail="{Binding Year}"></ImageCell>-->
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
+                <Button HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" Text="Manage Review" BackgroundColor="SkyBlue" Command="{Binding ManageReviews}" TextColor="White"></Button>
             </StackLayout>
         </Frame>
     </ContentPage>

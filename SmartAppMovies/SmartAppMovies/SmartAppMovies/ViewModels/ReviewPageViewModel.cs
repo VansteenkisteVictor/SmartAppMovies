@@ -129,7 +129,7 @@ namespace SmartAppMovies.ViewModels
                     {
                         string username = Application.Current.Properties["UserName"].ToString();
                         Login user = await _movieService.GetLogin(username);
-                        Review review = new Review();
+                        PostReview review = new PostReview();
                         review.Name = user.Username;
                         review.Comment = Comment;
                         decimal slider = Math.Round(Convert.ToDecimal(SliderValue));

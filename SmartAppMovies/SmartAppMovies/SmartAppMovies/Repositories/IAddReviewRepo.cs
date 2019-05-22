@@ -5,6 +5,6 @@ namespace SmartAppMovies.Repositories
 {
     public interface IAddReviewRepo
     {
-        Task AddReview(Review review);
+        Task AddReview(PostReview review);
     }
 }

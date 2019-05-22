@@ -27,10 +27,13 @@ namespace SmartAppMovies
             var nav = new NavigationService();
             nav.Configure(ViewModelLocator.MainPage, typeof(MainPage));
             nav.Configure(ViewModelLocator.DetailPage, typeof(DetailPage));
-            nav.Configure(ViewModelLocator.Review, typeof(Review));
+            nav.Configure(ViewModelLocator.AddReview, typeof(AddReview));
             nav.Configure(ViewModelLocator.AllReviews, typeof(AllReviews));
             nav.Configure(ViewModelLocator.Register, typeof(Register));
             nav.Configure(ViewModelLocator.Login, typeof(Login));
+            nav.Configure(ViewModelLocator.ManageReviews, typeof(ManageReviews));
+            nav.Configure(ViewModelLocator.UpdateReview, typeof(UpdateReview));
+            nav.Configure(ViewModelLocator.Preferences, typeof(Preferences));
 
             SimpleIoc.Default.Register<ICustomNavigation>(() => nav);
 

@@ -13,7 +13,7 @@ namespace SmartAppMovies.Repositories
         {
             try
             {
-                var getResponse = await $"https://192.168.1.15:45457/api/ReviewTask/{q}".GetJsonAsync<List<Review>>();
+                var getResponse = await $"https://192.168.233.98:45456/api/ReviewTask/{q}".GetJsonAsync<List<Review>>();
                 Console.WriteLine(getResponse);
                 return getResponse;
             }
