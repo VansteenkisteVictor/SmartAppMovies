@@ -8,8 +8,6 @@
     <TabbedPage.ToolbarItems>
         <ToolbarItem  Text="Logout" Command = "{Binding LogOutCommand}" 
                 Priority="0" Order="Primary" />
-        <ToolbarItem  Text="Preferences" Command = "{Binding PreferencesCommand}" 
-                Priority="0" Order="Primary" />
     </TabbedPage.ToolbarItems>
 
     <ContentPage Title="Search">

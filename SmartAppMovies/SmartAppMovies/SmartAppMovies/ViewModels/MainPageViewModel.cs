@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace SmartAppMovies.ViewModels
@@ -72,27 +73,8 @@ namespace SmartAppMovies.ViewModels
                 {
                     try
                     {
-                        Application.Current.Properties["UserName"] = null;
+                        Preferences.Remove("UserName");
                         _navigationService.GoBack();
-                    }
-                    catch (Exception ex)
-                    {
-                        throw ex;
-                    }
-
-                });
-            }
-        }
-
-        public RelayCommand PreferencesCommand
-        {
-            get
-            {
-                return new RelayCommand(() =>
-                {
-                    try
-                    {
-                        _navigationService.NavigateTo(ViewModelLocator.Preferences);
                     }
                     catch (Exception ex)
                     {
@@ -140,7 +122,7 @@ namespace SmartAppMovies.ViewModels
         {
             try
             {
-                string id = Application.Current.Properties["ID"].ToString();
+                string id = Preferences.Get("ID", null);
                 List<Review> ReviewsTemp = await _movieService.GetUserReview(id);
                 foreach(Review review in ReviewsTemp)
                 {

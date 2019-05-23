@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace SmartAppMovies.ViewModels
@@ -37,7 +38,7 @@ namespace SmartAppMovies.ViewModels
                         {
                             if (await LogUserIn())
                             {
-                                Application.Current.Properties["UserName"] = Email;
+                                Preferences.Set("UserName", Email);
                                 _navigationService.NavigateTo(ViewModelLocator.MainPage);
                             }
                             else
@@ -123,7 +124,7 @@ namespace SmartAppMovies.ViewModels
             byte[] inputpassword = GenerateSaltedHash(Password, login.Salt);
             if(Encoding.ASCII.GetString(inputpassword) == login.Password)
             {
-                Application.Current.Properties["ID"] = login.Id;
+                Preferences.Set("ID", login.Id.ToString());
                 return true;
             }
             else

@@ -127,8 +127,6 @@ D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies.Android\obj\
 D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies.Android\obj\Debug\81\linksrc\Lottie.Forms.dll.mdb
 D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies.Android\obj\Debug\81\linksrc\SmartAppMovies.dll.mdb
 D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies.Android\obj\Debug\81\linksrc\Xamarin.Essentials.dll.mdb
-D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies\bin\Debug\netstandard2.0\SmartAppMovies.dll
-D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies.Android\bin\Debug\SmartAppMovies.dll.mdb
 D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies.Android\obj\Debug\81\linksrc\GalaSoft.MvvmLight.Platform.dll.mdb
 D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies.Android\obj\Debug\81\linksrc\Lottie.Android.dll.mdb
 D:\SAD1\SmartAppMovies\SmartAppMovies\SmartAppMovies\SmartAppMovies.Android\obj\Debug\81\linksrc\Lottie.Forms.dll.mdb

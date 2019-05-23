@@ -288,7 +288,7 @@ namespace SmartAppMovies.ViewModels
                 if (Reviews.Count != 0)
                 {
                     ButtonReviews = true;
-                    string username = Application.Current.Properties["UserName"].ToString();
+                    string username = Preferences.Get("UserName", null);
                     ButtonAddReviews = true;
                     for (int i = 0; i < Reviews.Count; i++)
                     {

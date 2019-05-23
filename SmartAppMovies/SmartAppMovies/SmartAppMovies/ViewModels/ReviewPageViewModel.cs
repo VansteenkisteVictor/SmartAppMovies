@@ -5,6 +5,7 @@ using SmartAppMovies.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace SmartAppMovies.ViewModels
@@ -127,7 +128,7 @@ namespace SmartAppMovies.ViewModels
                 {
                     try
                     {
-                        string username = Application.Current.Properties["UserName"].ToString();
+                        string username = Preferences.Get("UserName", null); ;
                         Login user = await _movieService.GetLogin(username);
                         PostReview review = new PostReview();
                         review.Name = user.Username;

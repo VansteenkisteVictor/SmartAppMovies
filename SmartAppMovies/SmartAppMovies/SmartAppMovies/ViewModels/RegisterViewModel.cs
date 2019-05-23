@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace SmartAppMovies.ViewModels
@@ -158,7 +159,7 @@ namespace SmartAppMovies.ViewModels
                 user.Salt = Salt;
                 user.Admin = "False";
                 _movieService.AddLogin(user);
-                Application.Current.Properties["UserName"] = user.Username;
+                Preferences.Set("UserName", user.Username);
                 _navigationService.NavigateTo(ViewModelLocator.MainPage);
             }
             else

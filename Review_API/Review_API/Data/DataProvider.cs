@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using Microsoft.Extensions.Configuration;
 using Models;
-using Review_API.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
